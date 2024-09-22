@@ -5,15 +5,14 @@ type Props = {
   params: { noteId: string };
 };
 
-export const generateMetadata = async ({
-  params,
-}: Props): Promise<Metadata> => {
+export const generateMetadata = ({ params }: Props): Metadata => {
   return {
     title: `Note Detail ${params.noteId}`,
   };
 };
 
-export default function Note({ params }: Props) {
+export default function Note({ params, searchParams }: any) {
+  console.log(searchParams);
   if (parseInt(params.noteId) > 100) {
     notFound();
   }
