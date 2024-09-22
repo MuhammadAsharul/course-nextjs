@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: "",
+    template: "%s | Asharul",
     default: "Asharul Web",
   },
 };

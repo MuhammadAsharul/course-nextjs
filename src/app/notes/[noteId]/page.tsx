@@ -5,7 +5,9 @@ type Props = {
   params: { noteId: string };
 };
 
-export const generateMetadata = ({ params }: Props): Metadata => {
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
   return {
     title: `Note Detail ${params.noteId}`,
   };
