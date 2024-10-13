@@ -30,3 +30,14 @@ export async function PUT(
   posts[index] = { id: parseInt(params.id), ...body };
   return NextResponse.json(posts[index]);
 }
+
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const index = posts.findIndex((post) => post.id === parseInt(params.id));
+  posts.splice(index, 1);
+  return NextResponse.json({
+    message: `Delete resource with id ${params.id} success`,
+  });
+}
